@@ -2,7 +2,7 @@
 
 ## Usage
 
-Step 1. Move to the cloned folder, inside `(cloned-dir)/Dockerfiles/guacamole`
+Step 1. Move to the cloned folder, inside `(cloned-dir)/Dockerfiles/guacamole`.
 
 Step 2. Just type `docker-compose up -d` on your terminal. (Docker compose needs to be installed before.)
 
