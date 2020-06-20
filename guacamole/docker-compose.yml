@@ -38,5 +38,5 @@ services:
         depends_on:
             - guacamole
         volumes:
-            - ./httpd/apache2:/usr/local/apache2
+            - ./httpd/httpd.conf:/usr/local/apache2/conf/httpd.conf
         network_mode: host
