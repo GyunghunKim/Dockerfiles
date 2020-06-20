@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+
+    db:
+        image: mysql
+        volumes:
+            - ./mysql/initdb.sh:/docker-entrypoint-initdb.d/initdb.sh
+            - ./mysql/initdb.sql:/sqls/initdb.sql
+        environment:
+            MYSQL_ROOT_PASSWORD: passwd
+            GUACAMOLE_DB: guacamole_db
+            GUACAMOLE_DB_USER: guacamole_user
+            GUACAMOLE_DB_PASSWORD: passwd
+        expose:
+            - 3306
+        network_mode: host
+    guacd:
+        image: guacamole/guacd
+        expose:
+            - 4822
+        network_mode: host
+    guacamole:
+        image: guacamole/guacamole
+        depends_on:
+            - db
+            - guacd
+        environment:
+            GUACD_HOSTNAME: guacd
+            GUACD_PORT: 4822
+            MYSQL_HOSTNAME: localhost
+            MYSQL_DATABASE: guacamole_db
+            MYSQL_USER: guacamole_user
+            MYSQL_PASSWORD: passwd
+        network_mode: host
+    apache:
+        image: httpd:2.4
+        depends_on:
+            - guacamole
+        volumes:
+            - ./httpd/apache2:/usr/local/apache2
+        network_mode: host
