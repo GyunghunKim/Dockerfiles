@@ -1,6 +1,9 @@
 # One-step setting for Guacamole on SSajibang computer using docker compose
 
-## 1. Usage
+## Usage
 
-At the command line with docker compose, just type `docker-compose up -d`
-Now enjoy guacamole at `http://your-ip-here/`
+Step 1. Move to the cloned folder, inside /Dockerfiles/guacamole
+
+Step 2. Just type `docker-compose up -d`. (Docker compose needs to be installed before.)
+
+Step 3. Enjoy guacamole at `http://your-ip-here/`
