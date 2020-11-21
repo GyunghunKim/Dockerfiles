@@ -1,15 +1,29 @@
 # One-step setting for Guacamole on SSajibang computer using docker compose
 
+## Screenshots
+
+
+
 ## Usage
 
-Step 0. `sudo apt-get install docker-compose` (for ubuntu only, use the package manager of your linux distribution)
+1. `sudo apt-get install docker-compose` (For ubuntu only, Use the package manager of your own linux distribution.)
+1. Clone this repo: `git clone https://github.com/GyunghunKim/Dockerfiles.git`.
+1. Move into the cloned folder: `cd (cloned-dir)/Dockerfiles/guacamole`.
+1. Just type `sudo docker-compose up -d` on your terminal.
+1. Enjoy guacamole at `http://your-ip-here/` on web browser.
 
-Step 1. `git clone https://github.com/GyunghunKim/Dockerfiles.git`
+NOTE: Initial ID and password: guacadmin / guacadmin (**YOU MUST CHANGE IT!**)
 
-Step 2. Move into the cloned folder, `(cloned-dir)/Dockerfiles/guacamole`.
+## Troubleshooting
 
-Step 3. Just type `sudo docker-compose up -d` on your terminal
+### 1. Problems on ssh
 
-Step 4. Enjoy guacamole at `http://your-ip-here/` on web browser.
+- Allow password authentication at the configuation file: `/etc/ssh/sshd_config`
+- Don't forget to restart the service using `systemctl`: `sudo systemctl restart
+  ssh`
+- In guacamole setting page, set the host as `localhost` and the port as `22` 
 
-Initial ID and password: guacadmin / guacadmin (YOU MUST CHANGE IT!)
+## TODOs
+
+- Simple setting script for a GUI setting for an incipient server.
+- More instructions for the GUI setting as well as the SSH in detail.
