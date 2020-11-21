@@ -2,10 +2,14 @@
 
 ## Usage
 
-Step 1. Move into the cloned folder, `(cloned-dir)/Dockerfiles/guacamole`.
+Step 0. `sudo apt-get install docker-compose` (for ubuntu only, use the package manager of your linux distribution)
 
-Step 2. Just type `docker-compose up -d` on your terminal with superuser permission. 
+Step 1. `git clone https://github.com/GyunghunKim/Dockerfiles.git`
 
-(Docker compose needs to be installed before.)
+Step 2. Move into the cloned folder, `(cloned-dir)/Dockerfiles/guacamole`.
 
-Step 3. Enjoy guacamole at `http://your-ip-here/` on web browser.
+Step 3. Just type `sudo docker-compose up -d` on your terminal
+
+Step 4. Enjoy guacamole at `http://your-ip-here/` on web browser.
+
+Initial ID and password: guacadmin / guacadmin (YOU MUST CHANGE IT!)
